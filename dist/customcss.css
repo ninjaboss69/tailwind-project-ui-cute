@@ -1,0 +1,17 @@
+:root {
+  --y: 0px;
+  --x: 0px;
+  --h: 100px;
+}
+.translate-y-var {
+  transform: translateY(var(--y));
+}
+.translate-y-var--rain {
+  transform: translateY(var(--h));
+}
+.translate-x-var {
+  transform: translateX(var(--x));
+}
+.bgcolor {
+  background-color: black;
+}
