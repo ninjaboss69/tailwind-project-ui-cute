@@ -26,10 +26,35 @@ technologyNav.addEventListener("click", function (e) {
 weekendNav.addEventListener("click", function (e) {
   weekend.scrollIntoView();
 });
-
+const audioCE = document.getElementById("audioCE");
+const playAudio = () => {
+  audioCE.play();
+};
+const pauseAudio = () => {
+  audioCE.pause();
+};
 const moveFlower = document.getElementById("moveFlower");
 const borderOfLetter = document.getElementById("borderOfLetter");
 const moveFlowerRight = document.getElementById("moveFlowerRight");
+const audioIcon = document.getElementById("audioIcon");
+const audioIconPause = document.getElementById("audioIconPause");
+const audioIconPlay = document.getElementById("audioIconPlay");
+let playingCE = false;
+audioIcon.addEventListener("click", function () {
+  //sd
+  if (playingCE) {
+    playingCE = false;
+    audioIconPause.classList.remove("hidden");
+    audioIconPlay.classList.add("hidden");
+    pauseAudio();
+  } else {
+    playingCE = true;
+    audioIconPlay.classList.remove("hidden");
+    audioIconPause.classList.add("hidden");
+    playAudio();
+  }
+});
+
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 openLetter.addEventListener("click", function (e) {
   console.log("open");
@@ -42,6 +67,13 @@ openLetter.addEventListener("click", function (e) {
     borderOfLetter.offsetHeight + "px"
   );
   moveFlower.classList.add("translate-y-var");
+  playingCE = true;
+  setTimeout(function () {
+    playAudio();
+  }, 3000);
+
+  audioIconPlay.classList.remove("hidden");
+
   // console.log(a);
   moveFlowerRight.classList.add("translate-y-var");
 });
@@ -85,7 +117,7 @@ yesButton.addEventListener("click", function (e) {
         setVisibleLetter();
       }, 1000);
     });
-  }, 4000);
+  }, 2000);
 });
 const topscroll = document.getElementById("topscroll");
 noButton.addEventListener("click", function (e) {

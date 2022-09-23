@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./customcss.css"/>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <title>Help ME</title>
   </head>
   <body>
@@ -344,8 +346,8 @@
       </div>
     </div>
     <div class="bg-gray-600 mx-auto overflow-hidden transition duration-[2000ms]" id="ready" >
-      <div class="h-screen">
-        <div class="grid grid-cols-2 p-[100px] ">
+      <div class="md:h-screen h-[200vh]">
+        <div class="grid grid-cols-1 md:grid-cols-2 p-[100px] ">
           <div class="flex flex-col gap-y-[120px]">
             <p class="text-white text-[33px] font-mono">Ready to Explore More?</p>
             <div class="border-2 border-gray-300 text-center rounded-lg shadow-lg  hover:shadow-2xl hover:text-pink-600 hover:border-red-300"  id="yesButton">
@@ -363,13 +365,13 @@
           </div>
           <div class="p-[100px] overflow-hidden relative flex flex-col relative" id="borderOfLeft">
             <div class="flex absolute top-[-100px]">
-              <img src="../img/raindrops-removebg-preview.png" alt="the sun" class="w-16 transition duration-[4000ms] therains ">
-              <img src="../img/raindrops-removebg-preview.png" alt="the sun" class="w-16 transition duration-[4000ms] therains ">
-              <img src="../img/raindrops-removebg-preview.png" alt="the sun" class="w-16 transition duration-[4000ms] therains ">
-              <img src="../img/raindrops-removebg-preview.png" alt="the sun" class="w-16 transition duration-[4000ms] therains ">
-              <img src="../img/raindrops-removebg-preview.png" alt="the sun" class="w-16 transition duration-[4000ms] therains">
+              <img src="../img/raindrops-removebg-preview.png" alt="the sun" class="w-16 transition duration-[2000ms] therains ">
+              <img src="../img/raindrops-removebg-preview.png" alt="the sun" class="w-16 transition duration-[2000ms] therains ">
+              <img src="../img/raindrops-removebg-preview.png" alt="the sun" class="w-16 transition duration-[2000ms] therains ">
+              <img src="../img/raindrops-removebg-preview.png" alt="the sun" class="w-16 transition duration-[2000ms] therains ">
+              <img src="../img/raindrops-removebg-preview.png" alt="the sun" class="w-16 transition duration-[2000ms] therains">
             </div>
-            <img src="../img/thesun-removebg-preview.png" alt="the sun" class="w-16 transition duration-[2000ms]" id="thesun"/>
+            <img src="../img/thesun-removebg-preview.png" alt="the sun" class="w-16 transition duration-[1000ms]" id="thesun"/>
             <img src="../img/tree-removebg-preview-2.png" class="w-96">
             <img src="../img/oneflower-removebg-preview.png " class="w-16 absolute top-[300px] left-[150px] flowers opacity-0 transition duration-[4000ms]">
             <img src="../img/oneflower-removebg-preview.png " class="w-16 absolute top-[260px] left-[300px] flowers opacity-0 transition duration-[4000ms]">
@@ -383,10 +385,14 @@
       </div>
     </div>
     <div class="bg-gray-200">
-    <div class="max-w-5xl pt-10 mt-1 mx-auto h-screen hidden transition duration-[2000ms]" id="letter">
-      <div class="mb-[100px] p-[12px]">
+    <div class="max-w-5xl pt-10 mt-1 mx-auto h-screen transition duration-[2000ms] hidden" id="letter">
+      <div class="mb-[100px] p-[12px] flex items-center">
         <p class="font-mono relative inline-block">Here a letter for you!
         <img src="../img/purpleflower-removebg-preview.png" class="w-16 absolute right-[-70px] top-[-10px]"/>
+        <div class=" ml-[75px] mt-[5px] transition duration-[2000ms]" style="border-radius: 50%;" id="audioIcon">
+          <ion-icon name="mic-outline" class="w-32 p-[20px] hidden transition duration-[2000ms]" style="width: 26px; height:26px" id="audioIconPlay"></ion-icon>
+          <ion-icon name="mic-off-outline" class="w-32 p-[20px] hidden transition duration-[2000ms]" style="width: 26px; height:26px" id="audioIconPause"></ion-icon>
+        </div>
       </p>
       </div>
       <div class="border-4 border-pink-300 relative bg-rose-100 m-[12px] duration-[2000ms]  pb-[50px] " id="borderOfLetter">
@@ -414,7 +420,11 @@
 
         <!-- <div class="border-2 h-full"></div> -->
       </div>
-      
+      <audio controls id="audioCE" class="hidden">
+        <source src="../audio/Joe Dassin - Les Champs-ElysÃ©es (Lyrics Video).mp3" type="audio/ogg">
+       
+      Your browser does not support the audio element.
+      </audio>
     </div>
   </div>
     <script src="../dist/index.js"></script>
