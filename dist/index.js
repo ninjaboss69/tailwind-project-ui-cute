@@ -13,6 +13,7 @@ const openLetter = document.getElementById("openLetterButton");
 const cover_letter = document.getElementById("cover-letter");
 const nav_menu = document.getElementById("nav_menu");
 const textFromLetter = document.getElementById("textFromLetter");
+const videoAudioWave = document.getElementById("videoAudioWave");
 
 natureNav.addEventListener("click", function (e) {
   nature.scrollIntoView();
@@ -29,9 +30,11 @@ weekendNav.addEventListener("click", function (e) {
 const audioCE = document.getElementById("audioCE");
 const playAudio = () => {
   audioCE.play();
+  videoAudioWave.play();
 };
 const pauseAudio = () => {
   audioCE.pause();
+  videoAudioWave.pause();
 };
 const moveFlower = document.getElementById("moveFlower");
 const borderOfLetter = document.getElementById("borderOfLetter");
@@ -46,11 +49,13 @@ audioIcon.addEventListener("click", function () {
     playingCE = false;
     audioIconPause.classList.remove("hidden");
     audioIconPlay.classList.add("hidden");
+
     pauseAudio();
   } else {
     playingCE = true;
     audioIconPlay.classList.remove("hidden");
     audioIconPause.classList.add("hidden");
+
     playAudio();
   }
 });
@@ -68,12 +73,13 @@ openLetter.addEventListener("click", function (e) {
   );
   moveFlower.classList.add("translate-y-var");
   playingCE = true;
+  videoAudioWave.play();
   setTimeout(function () {
     playAudio();
   }, 3000);
 
   audioIconPlay.classList.remove("hidden");
-
+  videoAudioWave.classList.remove("hidden");
   // console.log(a);
   moveFlowerRight.classList.add("translate-y-var");
 });

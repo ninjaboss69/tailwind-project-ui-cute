@@ -385,7 +385,7 @@
       </div>
     </div>
     <div class="bg-gray-200">
-    <div class="max-w-5xl pt-10 mt-1 mx-auto h-screen transition duration-[2000ms] hidden" id="letter">
+    <div class="max-w-5xl pt-10 mt-1 mx-auto h-screen transition duration-[2000ms]" id="letter">
       <div class="mb-[100px] p-[12px] flex items-center">
         <p class="font-mono relative inline-block">Here a letter for you!
         <img src="../img/purpleflower-removebg-preview.png" class="w-16 absolute right-[-70px] top-[-10px]"/>
@@ -393,6 +393,11 @@
           <ion-icon name="mic-outline" class="w-32 p-[20px] hidden transition duration-[2000ms]" style="width: 26px; height:26px" id="audioIconPlay"></ion-icon>
           <ion-icon name="mic-off-outline" class="w-32 p-[20px] hidden transition duration-[2000ms]" style="width: 26px; height:26px" id="audioIconPause"></ion-icon>
         </div>
+        <video width="90" height="90" loop autoplay class="rounded-lg shadow-lg bg-gray-200 hidden" id="videoAudioWave">
+          <source src="../video/wave.mp4" type="video/mp4" >
+         
+        Your browser does not support the video tag.
+        </video>
       </p>
       </div>
       <div class="border-4 border-pink-300 relative bg-rose-100 m-[12px] duration-[2000ms]  pb-[50px] " id="borderOfLetter">
@@ -421,7 +426,7 @@
         <!-- <div class="border-2 h-full"></div> -->
       </div>
       <audio controls id="audioCE" class="hidden">
-        <source src="../audio/audioCE.mp3" type="audio/ogg">
+        <source src="../audio/audioAIW.mp3" type="audio/ogg">
        
       Your browser does not support the audio element.
       </audio>
