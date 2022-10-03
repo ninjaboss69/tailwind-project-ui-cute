@@ -95,10 +95,10 @@ const setVisibleLetter = () => {
   ready.classList.add("hidden");
 };
 yesButton.addEventListener("click", function (e) {
-  flowers.forEach((flower) => {
-    flower.classList.remove("opacity-0");
-    flower.classList.add("opacity-1");
-  });
+  // flowers.forEach((flower) => {
+  //   flower.classList.remove("opacity-0");
+  //   flower.classList.add("opacity-1");
+  // });
   document.documentElement.style.setProperty(
     "--x",
     borderOfLeft.offsetWidth - 50 + "px"
@@ -115,13 +115,12 @@ yesButton.addEventListener("click", function (e) {
   });
   setTimeout(() => {
     console.log("rain disapperaing");
+    setTimeout(() => {
+      console.log("hello");
+      setVisibleLetter();
+    }, 1000);
     therains.forEach((rain) => {
-      //rain.classList.remove("hidden");
       rain.classList.add("hidden");
-      //console.log("the fuck?");
-      setTimeout(() => {
-        setVisibleLetter();
-      }, 1000);
     });
   }, 2000);
 });
