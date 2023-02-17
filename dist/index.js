@@ -88,6 +88,7 @@ const yesButton = document.getElementById("yesButton");
 const noButton = document.getElementById("noButton");
 const borderOfLeft = document.getElementById("borderOfLeft");
 const thesun = document.getElementById("thesun");
+
 const therains = document.querySelectorAll(".therains");
 const ready = document.getElementById("ready");
 const setVisibleLetter = () => {
@@ -95,21 +96,22 @@ const setVisibleLetter = () => {
   ready.classList.add("hidden");
 };
 yesButton.addEventListener("click", function (e) {
-  // flowers.forEach((flower) => {
-  //   flower.classList.remove("opacity-0");
-  //   flower.classList.add("opacity-1");
-  // });
+  flowers.forEach((flower) => {
+    flower.classList.remove("opacity-0");
+    flower.classList.add("opacity-1");
+  });
   document.documentElement.style.setProperty(
     "--x",
     borderOfLeft.offsetWidth - 50 + "px"
   );
   thesun.classList.add("translate-x-var");
+
   document.documentElement.style.setProperty(
     "--y",
     borderOfLeft.offsetHeight - 150 + "px"
   );
   therains.forEach((rain) => {
-    //rain.classList.remove("hidden");
+    rain.classList.remove("hidden");
     rain.classList.add("translate-y-var");
     //console.log("the fuck?");
   });
